@@ -30,7 +30,12 @@ function App() {
     {imgSrc}
     <div className="flex space-x-4">
 
-    <input type="text" placeholder="Enter text and Share!" className="input input-bordered w-full max-w-xs" ref={inputRef}/>
+    <input type="text" placeholder="Enter text and Share!" className="input input-bordered w-full max-w-xs" ref={inputRef} onKeyDown={(e)=>{
+      if(e.key === 'Enter') {
+        e.preventDefault();
+        generateOnClick();
+      }
+    }}/>
     <button className="btn" onClick={generateOnClick}>Generate</button>
 
 
